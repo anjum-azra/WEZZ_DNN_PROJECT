@@ -1,31 +1,45 @@
-"""
-WEZ Maximum Launch Range Estimation using DNN
-
-Author : Anjum Azra
-"""
-
-from datetime import datetime
-
-
-def banner():
-
-    print("=" * 60)
-    print(" WEZ MAXIMUM LAUNCH RANGE ESTIMATION USING DNN ")
-    print("=" * 60)
-    print(f"Started : {datetime.now()}")
-    print("=" * 60)
+from simulation.wez import WEZEstimator
 
 
 def main():
 
-    banner()
+    estimator = WEZEstimator(
 
-    print("\nInitializing Project...")
+        shooter_altitude_ft=25000,
 
-    print("✓ Configuration Loaded")
-    print("✓ Utilities Loaded")
+        shooter_speed_knots=500,
 
-    print("\nCommit 1 Completed Successfully.")
+        shooter_pitch_deg=10,
+
+        target_altitude_ft=22000,
+
+        target_speed_knots=450,
+
+        target_heading_deg=30,
+
+        target_off_boresight_deg=20,
+
+    )
+
+    rmax = estimator.find_rmax()
+
+    print()
+
+    print("=" * 50)
+
+    print("WEAPON ENGAGEMENT ZONE")
+
+    print("=" * 50)
+
+    print()
+
+    print(f"Maximum Launch Range : {rmax:.2f} meters")
+
+    print(f"Maximum Launch Range : {rmax/1000:.2f} km")
+
+    print()
+
+    print("=" * 50)
 
 
 if __name__ == "__main__":

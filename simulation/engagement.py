@@ -76,14 +76,17 @@ class Engagement:
     def run(self):
 
         while (
-
             self.geometry.missile.alive
-
             and
-
             not self.intercept
+    ):
 
-        ):
+    # Target is moving away and range is increasing
+            if (
+                self.geometry.closing_velocity <= 0
+                and self.time > 2.0
+            ):
+                break
 
             self.step()
 

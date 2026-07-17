@@ -1,0 +1,5 @@
+2026-07-17 21:56:38,433 | INFO | Training Started
+2026-07-17 21:56:38,750 | INFO | Dataset Loaded | Train=81 Validation=17 Test=18
+2026-07-17 21:56:39,577 | WARNING | TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-07-17 21:58:04,997 | INFO | Training Finished | Loss=90960776.0000 MAE=6857.3369
+2026-07-17 21:58:09,466 | INFO | Training Completed Successfully
